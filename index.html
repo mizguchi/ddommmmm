@@ -22,7 +22,7 @@
     <div class="device-box">
         <h3>⚙️ 시스템 설정</h3>
         <p>기기 별명을 설정하세요 :</p>
-	<input type="text" id="nickname-input">
+        <input type="text" id="nickname-input">
         <button onclick="saveSettings()">설정 저장</button>
         <div id="display-name" style="margin-top:10px;"></div>
     </div>
@@ -34,31 +34,7 @@
     </div>
 </div>
 
-
-
-<script>
-    function saveSettings() {
-        const input = document.getElementById('nickname-input').value;
-        document.getElementById('display-name').innerHTML = "현재 별명: " + input;
-        alert("설정이 반영되었습니다.");
-    }
-
-    function viewAdminLogs() {
-        const logArea = document.getElementById('log-area');
-        
-        var systemConfig = window.config || { admin: false };
-
-        if (systemConfig.admin) {
-            
-            setTimeout(() => {
-                const secret = "RE9Ne0Nsb2JiZXJpbmdfU3VjY2Vzc19IYWNrZXJ9"; 
-                logArea.innerHTML = "🔓 [SUCCESS] " + atob(secret);
-            }, 1000);
-        } else {
-            logArea.innerText = "❌ 거부됨: 관리자(admin)가 아닙니다.";
-        }
-    }
-</script>
+<script src="smarthome_obf.js"></script>
 
 </body>
 </html>
